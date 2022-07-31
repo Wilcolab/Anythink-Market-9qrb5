@@ -63,6 +63,11 @@ async def create_new_item(
     items_repo: ItemsRepository = Depends(get_repository(ItemsRepository)),
 ) -> ItemInResponse:
     slug = get_slug_for_item(item_create.title)
+    img = "placeholder.png"
+
+    if len(item_create.image) == 0:
+        item_create.image = img
+
     if await check_item_exists(items_repo, slug):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
