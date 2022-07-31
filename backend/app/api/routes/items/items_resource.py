@@ -63,7 +63,7 @@ async def create_new_item(
     items_repo: ItemsRepository = Depends(get_repository(ItemsRepository)),
 ) -> ItemInResponse:
     slug = get_slug_for_item(item_create.title)
-    img = "placeholder.png"
+    img = "placeholder"
 
     if len(item_create.image) == 0:
         item_create.image = img
