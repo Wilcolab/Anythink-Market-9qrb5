@@ -38,7 +38,7 @@ class Item extends React.Component {
       return null;
     }
 
-    if(this.props.item.image == 0){
+    if(this.props.item.image.trim() == 0){
       this.props.item.image = "../placeholder.png"
     }
 

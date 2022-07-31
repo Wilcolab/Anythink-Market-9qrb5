@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
 const ItemPreview = (props) => {
   const item = props.item;
 
-  if (item.image == 0){
+  if (item.image.trim() == 0){
     item.image = "placeholder.png"
   }
 
